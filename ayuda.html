@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Centro de ayuda de la tienda de segunda mano. Encuentra respuestas a tus preguntas o contáctanos directamente.">
+    <title>Ayuda - Tienda de Segunda Mano</title>
+        <!-- Favicon -->
+    <link rel="icon" href="imagenes/favicon.png" type="image/png">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="imagenes/logo.png" alt="Logo de la Tienda">
+            <h1>Tienda de Segunda Mano</h1>
+        </div>
+        <div class="busqueda">
+            <input type="text" placeholder="Buscar productos...">
+            <button>Buscar</button>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="Index.html">Inicio</a></li>
+            <li><a href="categorias.html">Categorías</a></li>
+            <li><a href="publicar.html">Publicar Artículo</a></li>
+            <li><a href="perfil.html">Mi Perfil</a></li>
+            <li><a href="ayuda.html" class="activo">Ayuda</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="introduccion">
+            <h2>Centro de Ayuda</h2>
+            <p>Encuentra respuestas a tus preguntas más frecuentes o contáctanos directamente.</p>
+        </section>
+
+        <section class="faq">
+            <h3>Preguntas Frecuentes</h3>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-pregunta" onclick="toggleFaq(this)">
+                        <span>¿Cómo publico un artículo?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-respuesta">
+                        <p>Ve a la sección "Publicar Artículo" en el menú de navegación y completa el formulario con la información de tu producto. Asegúrate de incluir una buena descripción y fotos claras para aumentar las posibilidades de venta.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-pregunta" onclick="toggleFaq(this)">
+                        <span>¿Es seguro comprar aquí?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-respuesta">
+                        <p>Todas las transacciones están protegidas con cifrado y validación de usuario. Además, revisamos los perfiles de los vendedores y ofrecemos un sistema de calificaciones para mayor seguridad.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-pregunta" onclick="toggleFaq(this)">
+                        <span>¿Puedo eliminar un producto publicado?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-respuesta">
+                        <p>Sí, desde tu perfil puedes editar o eliminar tus publicaciones en cualquier momento. Solo ve a "Mi Perfil" y selecciona el artículo que deseas modificar o eliminar.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-pregunta" onclick="toggleFaq(this)">
+                        <span>¿Cómo contacto a un vendedor?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-respuesta">
+                        <p>Puedes contactar al vendedor haciendo clic en el botón "Ver Detalles" del producto. Allí encontrarás un botón para enviar un mensaje al vendedor.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-pregunta" onclick="toggleFaq(this)">
+                        <span>¿Cuáles son las formas de pago aceptadas?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-respuesta">
+                        <p>Aceptamos pagos con tarjeta de crédito/débito, transferencias bancarias y pagos en efectivo al momento de la entrega (según acuerdo con el vendedor).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-pregunta" onclick="toggleFaq(this)">
+                        <span>¿Hay algún costo por publicar productos?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-respuesta">
+                        <p>No, publicar productos es completamente gratuito. Solo se aplica una pequeña comisión sobre las ventas exitosas para mantener la plataforma funcionando.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contacto">
+            <h3>Contáctanos</h3>
+            <p class="contacto-descripcion">¿No encontraste la respuesta que buscabas? Envíanos un mensaje y te responderemos lo antes posible.</p>
+            <form class="form-contacto" id="formContacto" onsubmit="validarContacto(event)">
+                <div class="form-group">
+                    <label for="nombreContacto">Nombre:</label>
+                    <input type="text" id="nombreContacto" name="nombre" required placeholder="Tu nombre completo">
+                </div>
+                <div class="form-group">
+                    <label for="emailContacto">Correo electrónico:</label>
+                    <input type="email" id="emailContacto" name="email" required placeholder="tu@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="asunto">Asunto:</label>
+                    <select id="asunto" name="asunto" required>
+                        <option value="">Selecciona un asunto...</option>
+                        <option value="consulta">Consulta General</option>
+                        <option value="problema">Reportar un Problema</option>
+                        <option value="sugerencia">Sugerencia</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mensajeContacto">Mensaje:</label>
+                    <textarea id="mensajeContacto" name="mensaje" rows="5" required placeholder="Escribe tu mensaje aquí..."></textarea>
+                </div>
+                <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year">2025</span> Tienda de Segunda Mano. Todos los derechos reservados.</p>
+        <p><a href="#">Contacto</a> | <a href="#">Términos de Uso</a> | <a href="#">Política de Privacidad</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const respuesta = faqItem.querySelector('.faq-respuesta');
+            const icon = element.querySelector('.faq-icon');
+            
+            const isActive = faqItem.classList.contains('active');
+            
+            // Cerrar todos los demás
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+                item.querySelector('.faq-icon').textContent = '+';
+            });
+            
+            // Abrir/cerrar el actual
+            if (!isActive) {
+                faqItem.classList.add('active');
+                icon.textContent = '−';
+            }
+        }
+
+        function validarContacto(e) {
+            e.preventDefault();
+            const form = e.target;
+            const mensaje = form.mensaje.value.trim();
+            const email = form.email.value.trim();
+            
+            if (mensaje.length < 10) {
+                alert('Por favor escribe un mensaje más detallado (mínimo 10 caracteres)');
+                return false;
+            }
+            
+            if (!validarEmail(email)) {
+                alert('Por favor ingresa un correo electrónico válido');
+                return false;
+            }
+            
+            prevenirDobleEnvio(form);
+            alert('¡Mensaje enviado exitosamente! Te responderemos pronto.');
+            form.reset();
+            return true;
+        }
+    </script>
+</body>
+</html>

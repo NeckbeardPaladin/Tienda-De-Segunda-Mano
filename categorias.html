@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorías - Tienda de Segunda Mano</title>
+    <!-- Favicon -->
+    <link rel="icon" href="imagenes/favicon.png" type="image/png">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="imagenes/logo.png" alt="Logo de la Tienda">
+            <h1>Tienda de Segunda Mano</h1>
+        </div>
+        <div class="busqueda">
+            <input type="text" placeholder="Buscar productos...">
+            <button>Buscar</button>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="Index.html">Inicio</a></li>
+            <li><a href="categorias.html" class="activo">Categorías</a></li>
+            <li><a href="publicar.html">Publicar Artículo</a></li>
+            <li><a href="perfil.html">Mi Perfil</a></li>
+            <li><a href="ayuda.html">Ayuda</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="introduccion">
+            <h2>Categorías Disponibles</h2>
+            <p>Explora nuestras principales categorías y descubre artículos únicos a precios increíbles. Encuentra exactamente lo que buscas o déjate sorprender por nuestras ofertas destacadas.</p>
+        </section>
+
+        <!-- Barra de búsqueda de categorías -->
+        <section class="filtro-categorias">
+            <input type="text" id="buscarCategoria" placeholder="Buscar categoría..." onkeyup="filtrarCategorias()">
+        </section>
+
+        <!-- Grid de categorías -->
+        <section class="grid-categorias">
+            <article class="categoria-card">
+                <div class="categoria-icono">📱</div>
+                <h3>Electrónica</h3>
+                <p class="categoria-descripcion">Smartphones, tablets, laptops, auriculares, relojes inteligentes y más dispositivos tecnológicos.</p>
+                <div class="categoria-info">
+                    <span class="productos-count">342 productos</span>
+                    <span class="categoria-badge">Popular</span>
+                </div>
+                <div class="subcategorias">
+                    <span class="subcategoria-tag">Móviles</span>
+                    <span class="subcategoria-tag">Computadoras</span>
+                    <span class="subcategoria-tag">Audio</span>
+                </div>
+                <button class="btn-explorar">Explorar Categoría</button>
+            </article>
+
+            <article class="categoria-card">
+                <div class="categoria-icono">👔</div>
+                <h3>Ropa y Accesorios</h3>
+                <p class="categoria-descripcion">Ropa de segunda mano en excelente estado, zapatos, bolsos, joyería y complementos de moda.</p>
+                <div class="categoria-info">
+                    <span class="productos-count">528 productos</span>
+                    <span class="categoria-badge destacado">Destacado</span>
+                </div>
+                <div class="subcategorias">
+                    <span class="subcategoria-tag">Ropa Hombre</span>
+                    <span class="subcategoria-tag">Ropa Mujer</span>
+                    <span class="subcategoria-tag">Zapatos</span>
+                </div>
+                <button class="btn-explorar">Explorar Categoría</button>
+            </article>
+
+            <article class="categoria-card">
+                <div class="categoria-icono">🏠</div>
+                <h3>Hogar y Cocina</h3>
+                <p class="categoria-descripcion">Muebles, decoración, electrodomésticos, utensilios de cocina y artículos para el hogar.</p>
+                <div class="categoria-info">
+                    <span class="productos-count">287 productos</span>
+                </div>
+                <div class="subcategorias">
+                    <span class="subcategoria-tag">Muebles</span>
+                    <span class="subcategoria-tag">Decoración</span>
+                    <span class="subcategoria-tag">Electrodomésticos</span>
+                </div>
+                <button class="btn-explorar">Explorar Categoría</button>
+            </article>
+
+            <article class="categoria-card">
+                <div class="categoria-icono">📚</div>
+                <h3>Libros y Música</h3>
+                <p class="categoria-descripcion">Libros usados, cómics, vinilos, CDs, instrumentos musicales y partituras.</p>
+                <div class="categoria-info">
+                    <span class="productos-count">156 productos</span>
+                </div>
+                <div class="subcategorias">
+                    <span class="subcategoria-tag">Libros</span>
+                    <span class="subcategoria-tag">Música</span>
+                    <span class="subcategoria-tag">Instrumentos</span>
+                </div>
+                <button class="btn-explorar">Explorar Categoría</button>
+            </article>
+
+            <article class="categoria-card">
+                <div class="categoria-icono">🎮</div>
+                <h3>Juguetes y Videojuegos</h3>
+                <p class="categoria-descripcion">Consolas, videojuegos, juguetes educativos, figuras de colección y juegos de mesa.</p>
+                <div class="categoria-info">
+                    <span class="productos-count">198 productos</span>
+                    <span class="categoria-badge">Nuevo</span>
+                </div>
+                <div class="subcategorias">
+                    <span class="subcategoria-tag">Consolas</span>
+                    <span class="subcategoria-tag">Videojuegos</span>
+                    <span class="subcategoria-tag">Juguetes</span>
+                </div>
+                <button class="btn-explorar">Explorar Categoría</button>
+            </article>
+
+            <article class="categoria-card">
+                <div class="categoria-icono">⚽</div>
+                <h3>Deportes</h3>
+                <p class="categoria-descripcion">Equipamiento deportivo, bicicletas, ropa deportiva, accesorios de fitness y más.</p>
+                <div class="categoria-info">
+                    <span class="productos-count">234 productos</span>
+                </div>
+                <div class="subcategorias">
+                    <span class="subcategoria-tag">Fitness</span>
+                    <span class="subcategoria-tag">Ciclismo</span>
+                    <span class="subcategoria-tag">Running</span>
+                </div>
+                <button class="btn-explorar">Explorar Categoría</button>
+            </article>
+
+            <article class="categoria-card">
+                <div class="categoria-icono">🚗</div>
+                <h3>Automotriz</h3>
+                <p class="categoria-descripcion">Accesorios para vehículos, repuestos, herramientas y productos relacionados con automóviles.</p>
+                <div class="categoria-info">
+                    <span class="productos-count">89 productos</span>
+                </div>
+                <div class="subcategorias">
+                    <span class="subcategoria-tag">Accesorios</span>
+                    <span class="subcategoria-tag">Repuestos</span>
+                    <span class="subcategoria-tag">Herramientas</span>
+                </div>
+                <button class="btn-explorar">Explorar Categoría</button>
+            </article>
+
+            <article class="categoria-card">
+                <div class="categoria-icono">🎨</div>
+                <h3>Arte y Antigüedades</h3>
+                <p class="categoria-descripcion">Pinturas, esculturas, antigüedades, objetos de colección y piezas únicas con historia.</p>
+                <div class="categoria-info">
+                    <span class="productos-count">67 productos</span>
+                </div>
+                <div class="subcategorias">
+                    <span class="subcategoria-tag">Pinturas</span>
+                    <span class="subcategoria-tag">Antigüedades</span>
+                    <span class="subcategoria-tag">Coleccionables</span>
+                </div>
+                <button class="btn-explorar">Explorar Categoría</button>
+            </article>
+        </section>
+
+        <!-- Sección de categorías populares -->
+        <section class="categorias-populares">
+            <h2>Categorías Más Populares</h2>
+            <div class="popular-badges">
+                <span class="popular-badge">Electrónica</span>
+                <span class="popular-badge">Ropa y Accesorios</span>
+                <span class="popular-badge">Juguetes y Videojuegos</span>
+                <span class="popular-badge">Hogar y Cocina</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year">2025</span> Tienda de Segunda Mano. Todos los derechos reservados.</p>
+        <p><a href="#">Contacto</a> | <a href="#">Términos de Uso</a> | <a href="#">Política de Privacidad</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function filtrarCategorias() {
+            const input = document.getElementById('buscarCategoria');
+            const filter = input.value.toLowerCase();
+            const cards = document.querySelectorAll('.categoria-card');
+
+            cards.forEach(card => {
+                const texto = card.textContent.toLowerCase();
+                if (texto.includes(filter)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
